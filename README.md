@@ -1,16 +1,118 @@
-# React + Vite
+# Sakhi by Amisha Amruta 👗
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+**The Thread of Friendship**
 
-Currently, two official plugins are available:
+Sakhi is a women's fashion e-commerce website designed to showcase stylish kurtis, sarees, and ethnic wear. The project aims to provide customers with a simple, attractive, and convenient online shopping experience.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ✨ Features
 
-## React Compiler
+- Modern and responsive user interface
+- Women's ethnic wear collections
+- Product showcase with images and details
+- Collection-based product browsing
+- Shopping experience designed for mobile and desktop
+- Pan-India delivery information
+- Planned online payment and Cash on Delivery options
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Tech Stack
 
-## Expanding the Oxlint configuration
+**Frontend**
+- React.js
+- Vite
+- Tailwind CSS
+- JavaScript
+- CSS
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+**Backend and Database (Planned)**
+- Java Spring Boot
+- MySQL
+
+**Product Image Hosting (Planned)**
+- ImageKit
+
+## 📁 Project Structure
+
+```text
+sakhi-website/
+├── public/
+├── src/
+│   ├── assets/
+│   ├── components/
+│   │   ├── ProductSection.jsx
+│   │   ├── CollectionSection.jsx
+│   │   └── Footer.jsx
+│   ├── App.jsx
+│   ├── App.css
+│   ├── index.css
+│   └── main.jsx
+├── index.html
+├── package.json
+├── package-lock.json
+├── vite.config.js
+└── README.md
+```
+
+*The structure above describes the current frontend files discussed during development; your actual folders may differ.*
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js
+- npm
+- Git
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/aaryan-git/sakhi-website.git
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd sakhi-website
+   ```
+
+3. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+4. Start the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+5. Open the local URL displayed in your terminal.
+
+## 🛍️ Brand Information
+
+- **Brand:** Sakhi by Amisha Amruta
+- **Tagline:** The Thread of Friendship
+- **Products:** Women's kurtis and sarees
+- **Delivery:** Pan India
+- **Estimated delivery:** 7–8 working days
+
+## 🔮 Future Enhancements
+
+- Spring Boot REST API integration
+- MySQL database integration
+- Customer registration and login
+- Product search and filtering
+- Shopping cart and checkout
+- Online payments and Cash on Delivery
+- Order management and tracking
+- Admin dashboard for products and orders
+
+## 👩‍💻 Developer
+
+Developed as an e-commerce website project for **Sakhi by Amisha Amruta**.
+
+## 📄 License
+
+This project is currently intended for learning and development purposes.
