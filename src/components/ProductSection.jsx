@@ -1,7 +1,8 @@
 
-import products from '../data/products.js'
+import { useEffect, useState } from 'react'
 import { ArrowUpRight } from 'lucide-react'
 
+const API_URL = 'http://localhost:8080/api/product/'
 const instagramUrl = 'https://www.instagram.com/sakhi.by.aa/'
 
 function ProductCard({ product }) {
@@ -9,7 +10,7 @@ function ProductCard({ product }) {
     <article className="group">
       <div className="relative aspect-[3/4] overflow-hidden bg-[#f6eeee]">
         <img
-          src={product.image}
+          src={product.imageUrl}
           alt={product.name}
           loading="lazy"
           className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
@@ -54,6 +55,7 @@ function ProductGroup({ title, subtitle, products, id }) {
           <p className="text-xs uppercase tracking-[0.25em] text-[#7A2946]">
             {subtitle}
           </p>
+
           <h2 className="mt-2 font-serif text-3xl text-[#542033] sm:text-4xl">
             {title}
           </h2>
@@ -80,6 +82,31 @@ function ProductGroup({ title, subtitle, products, id }) {
 }
 
 export default function ProductSection() {
+  const [products, setProducts] = useState([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState('')
+
+  useEffect(() => {
+    fetch(API_URL)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Failed to load products')
+        }
+
+        return response.json()
+      })
+      .then((data) => {
+        setProducts(data)
+      })
+      .catch((err) => {
+        console.error('Product API error:', err)
+        setError('Unable to load products. Please try again later.')
+      })
+      .finally(() => {
+        setLoading(false)
+      })
+  }, [])
+
   const kurtis = products.filter(
     (product) => product.category === 'Kurtis'
   )
@@ -87,6 +114,22 @@ export default function ProductSection() {
   const sarees = products.filter(
     (product) => product.category === 'Sarees'
   )
+
+  if (loading) {
+    return (
+      <section className="bg-[#fffaf8] px-5 py-16 text-center">
+        Loading our collection...
+      </section>
+    )
+  }
+
+  if (error) {
+    return (
+      <section className="bg-[#fffaf8] px-5 py-16 text-center text-red-700">
+        {error}
+      </section>
+    )
+  }
 
   return (
     <section className="space-y-16 bg-[#fffaf8] px-5 py-16 sm:py-20">
